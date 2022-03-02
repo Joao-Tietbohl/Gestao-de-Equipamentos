@@ -21,6 +21,8 @@ namespace Gestao_de_Equipamentos
         static int contadorQuantidadeDeEquipamentos = 0;
         static int contadorQuantidadeDeChamados = 0;
 
+        static int opcaoMenu; 
+
         static int DescobrirPosicaoNaArrayPeloTitulo(string titulo)
         {
             int posicaoChamadoASerEditado = 0;
@@ -887,7 +889,7 @@ namespace Gestao_de_Equipamentos
 
             static void MenuPrincipal()
             {
-                int opcao = 0;
+                
                 do
                 {
                     Console.WriteLine();
@@ -895,11 +897,11 @@ namespace Gestao_de_Equipamentos
                     Console.WriteLine("2 - Menu de chamados");
                     Console.WriteLine("3 - Sair do programa");
                     
-                    opcao = Int32.Parse(Console.ReadLine());
+                    opcaoMenu = Int32.Parse(Console.ReadLine());
                     Console.Clear();
 
                 //Caso opção seja inválida
-                while (opcao != 1 && opcao != 2 && opcao != 3)
+                while (opcaoMenu != 1 && opcaoMenu != 2 && opcaoMenu != 3)
                     {
 
                         Console.WriteLine();
@@ -908,21 +910,21 @@ namespace Gestao_de_Equipamentos
                         Console.WriteLine("Opção inválida, digite novamente: ");
                         Console.WriteLine();
                         
-                        opcao = Int32.Parse(Console.ReadLine());
+                        opcaoMenu = Int32.Parse(Console.ReadLine());
                         Console.Clear();
 
                 }
 
                     //Caso opção seja válida
-                    if (opcao == 1)
+                    if (opcaoMenu == 1)
                     {
                         MenuDeEquipamentos();
                     }
-                    if (opcao == 2)
+                    if (opcaoMenu == 2)
                     {
                         MenuDeManutencao();
                     }
-                } while (opcao != 3);
+                } while (opcaoMenu != 3);
 
             }
 
